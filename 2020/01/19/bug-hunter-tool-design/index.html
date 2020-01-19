@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="demandAs a bug hunter, we must firstly sbumit the report to earn the ez bounty. so I need to build the tool to do my recon work automatically and timing  enmurate the subdomain scan ip port open state">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bug_hunter_tool">
+<meta property="og:url" content="https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/index.html">
+<meta property="og:site_name" content="k3mloldeblog">
+<meta property="og:description" content="demandAs a bug hunter, we must firstly sbumit the report to earn the ez bounty. so I need to build the tool to do my recon work automatically and timing  enmurate the subdomain scan ip port open state">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-19T06:02:14.000Z">
+<meta property="article:modified_time" content="2020-01-19T06:27:03.135Z">
+<meta property="article:author" content="k3mlol">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="bug hunter">
+<meta property="article:tag" content="cyber security">
+<meta property="article:tag" content="web application security">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>bug_hunter_tool</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2020/01/19/hello-world/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&text=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&title=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&is_video=false&description=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=bug_hunter_tool&body=Check out this article: https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&title=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&title=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&title=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&title=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&name=bug_hunter_tool&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&t=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#demand"><span class="toc-number">1.</span> <span class="toc-text">demand</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Finally"><span class="toc-number">2.</span> <span class="toc-text">Finally</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        bug_hunter_tool
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">k3mloldeblog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-01-19T06:02:14.000Z" itemprop="datePublished">2020-01-19</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="demand"><a href="#demand" class="headerlink" title="demand"></a>demand</h3><p>As a bug hunter, we must firstly sbumit the report to earn the ez bounty.</p>
+<p>so I need to build the tool to do my recon work automatically and timing</p>
+<ul>
+<li>enmurate the subdomain</li>
+<li>scan ip port open state</li>
+<li>fingerprint of the web system</li>
+</ul>
+<p>the best plan is the system info me the new assets or port online, I can start your work.</p>
+<ul>
+<li>log my burp</li>
+</ul>
+<p>I have the bunch endpoint and parameter from burpsuit, I need to store for future work, especially some key request and response which are I consider they had the vuln or will have the vuln.</p>
+<ul>
+<li>automatically upload the assest from burp</li>
+</ul>
+<p>there are so many tool for collecting the subdomain, Amass,aquatone,Fuzz domain and so on. but I still find that the tool miss some subdomain, especially from the APP</p>
+<ul>
+<li>plugin scan</li>
+</ul>
+<p>yes, the web application vulnerability scanner can found the awesome vuln, but I still need it to help me reduce the heavy work. For example, the Jira had the unauth CVE, once I get the POC, I can start scanning the project.</p>
+<h3 id="Finally"><a href="#Finally" class="headerlink" title="Finally"></a>Finally</h3><p>as a part time bug hunter, I want to reduce the heavy and repetitive work, I can just focus on the vuln search, mostly, this is not a easy work, because I see most web system just had the login page. challenge work deserve big bounty.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#demand"><span class="toc-number">1.</span> <span class="toc-text">demand</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Finally"><span class="toc-number">2.</span> <span class="toc-text">Finally</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&text=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&title=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&is_video=false&description=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=bug_hunter_tool&body=Check out this article: https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&title=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&title=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&title=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&title=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&name=bug_hunter_tool&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://k3mlol.github.io/2020/01/19/bug-hunter-tool-design/&t=bug_hunter_tool" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 k3mlol
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
