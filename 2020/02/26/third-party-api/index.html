@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="third party api securitythe most app contain the third party api service, there are security issue releated to it. uage of third party api log file upload(upload the app error) App Analytics online ma">
+<meta property="og:type" content="article">
+<meta property="og:title" content="third-party-api">
+<meta property="og:url" content="https://k3mlol.github.io/2020/02/26/third-party-api/index.html">
+<meta property="og:site_name" content="k3mloldeblog">
+<meta property="og:description" content="third party api securitythe most app contain the third party api service, there are security issue releated to it. uage of third party api log file upload(upload the app error) App Analytics online ma">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-26T06:13:32.000Z">
+<meta property="article:modified_time" content="2020-02-26T07:20:17.831Z">
+<meta property="article:author" content="k3mlol">
+<meta property="article:tag" content="api security">
+<meta property="article:tag" content="data security">
+<meta property="article:tag" content="app security">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>third-party-api</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/toollink">tool_link</a></li>
+         
+          <li><a href="/bloglink">blog_link</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2020/02/24/msrc/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://k3mlol.github.io/2020/02/26/third-party-api/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://k3mlol.github.io/2020/02/26/third-party-api/&text=third-party-api" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://k3mlol.github.io/2020/02/26/third-party-api/&title=third-party-api" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://k3mlol.github.io/2020/02/26/third-party-api/&is_video=false&description=third-party-api" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=third-party-api&body=Check out this article: https://k3mlol.github.io/2020/02/26/third-party-api/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://k3mlol.github.io/2020/02/26/third-party-api/&title=third-party-api" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://k3mlol.github.io/2020/02/26/third-party-api/&title=third-party-api" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://k3mlol.github.io/2020/02/26/third-party-api/&title=third-party-api" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://k3mlol.github.io/2020/02/26/third-party-api/&title=third-party-api" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://k3mlol.github.io/2020/02/26/third-party-api/&name=third-party-api&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://k3mlol.github.io/2020/02/26/third-party-api/&t=third-party-api" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#third-party-api-security"><span class="toc-number">1.</span> <span class="toc-text">third party api security</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uage-of-third-party-api"><span class="toc-number">2.</span> <span class="toc-text">uage of third party api</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#security-issue"><span class="toc-number">2.1.</span> <span class="toc-text">security issue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#some-api-service-may-had-the-security-issue"><span class="toc-number">2.2.</span> <span class="toc-text">some api service may had the security issue</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#upload-the-image"><span class="toc-number">2.2.1.</span> <span class="toc-text">upload the image</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#map"><span class="toc-number">2.2.2.</span> <span class="toc-text">map</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#amap-高德地图开放API-https-lbs-amap-com"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">amap(高德地图开放API)(https:&#x2F;&#x2F;lbs.amap.com&#x2F;)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#baidu-map-sdk"><span class="toc-number">2.2.2.2.</span> <span class="toc-text">baidu map sdk</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App-Analytics"><span class="toc-number">3.</span> <span class="toc-text">App Analytics</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#branch-io"><span class="toc-number">3.1.</span> <span class="toc-text">branch.io</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#api-amplitude-com"><span class="toc-number">3.2.</span> <span class="toc-text">api.amplitude.com</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#quantummetric-com"><span class="toc-number">3.3.</span> <span class="toc-text">quantummetric.com</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#braze-com"><span class="toc-number">3.4.</span> <span class="toc-text">braze.com</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kochava-com"><span class="toc-number">3.5.</span> <span class="toc-text">kochava.com</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#appcenter-ms"><span class="toc-number">3.6.</span> <span class="toc-text">appcenter.ms</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#app-measurement-com"><span class="toc-number">3.7.</span> <span class="toc-text">app-measurement.com</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#crashlytics-com"><span class="toc-number">3.8.</span> <span class="toc-text">crashlytics.com</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#payment"><span class="toc-number">4.</span> <span class="toc-text">payment</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#stripe-com"><span class="toc-number">4.1.</span> <span class="toc-text">stripe.com</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App-Analytics-China"><span class="toc-number">5.</span> <span class="toc-text">App Analytics(China)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mob-com"><span class="toc-number">5.1.</span> <span class="toc-text">mob.com</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#umeng"><span class="toc-number">5.2.</span> <span class="toc-text">umeng</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        third-party-api
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">k3mloldeblog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-02-26T06:13:32.000Z" itemprop="datePublished">2020-02-26</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/api-security/" rel="tag">api security</a>, <a class="tag-link" href="/tags/app-security/" rel="tag">app security</a>, <a class="tag-link" href="/tags/data-security/" rel="tag">data security</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="third-party-api-security"><a href="#third-party-api-security" class="headerlink" title="third party api security"></a>third party api security</h3><p>the most app contain the third party api service, there are security issue releated to it.</p>
+<h3 id="uage-of-third-party-api"><a href="#uage-of-third-party-api" class="headerlink" title="uage of third party api"></a>uage of third party api</h3><ul>
+<li>log file upload(upload the app error)</li>
+<li>App Analytics</li>
+<li>online map api</li>
+<li>upload the image</li>
+<li>payment</li>
+</ul>
+<h4 id="security-issue"><a href="#security-issue" class="headerlink" title="security issue"></a>security issue</h4><ul>
+<li>misconfigure api key assess</li>
+<li>upload the log file contain the sensitive information(token,session,password)</li>
+</ul>
+<h4 id="some-api-service-may-had-the-security-issue"><a href="#some-api-service-may-had-the-security-issue" class="headerlink" title="some api service may had the security issue"></a>some api service may had the security issue</h4><h5 id="upload-the-image"><a href="#upload-the-image" class="headerlink" title="upload the image"></a>upload the image</h5><ul>
+<li>aliyun OSS</li>
+</ul>
+<h5 id="map"><a href="#map" class="headerlink" title="map"></a>map</h5><h6 id="amap-高德地图开放API-https-lbs-amap-com"><a href="#amap-高德地图开放API-https-lbs-amap-com" class="headerlink" title="amap(高德地图开放API)(https://lbs.amap.com/)"></a>amap(高德地图开放API)(<a href="https://lbs.amap.com/" target="_blank" rel="noopener">https://lbs.amap.com/</a>)</h6><ul>
+<li>yuntuapi.amap.com</li>
+</ul>
+<h6 id="baidu-map-sdk"><a href="#baidu-map-sdk" class="headerlink" title="baidu map sdk"></a>baidu map sdk</h6><ul>
+<li>api.map.baidu.com</li>
+</ul>
+<hr>
+<h3 id="App-Analytics"><a href="#App-Analytics" class="headerlink" title="App Analytics"></a>App Analytics</h3><h4 id="branch-io"><a href="#branch-io" class="headerlink" title="branch.io"></a>branch.io</h4><ul>
+<li>api.branch.io</li>
+</ul>
+<h4 id="api-amplitude-com"><a href="#api-amplitude-com" class="headerlink" title="api.amplitude.com"></a>api.amplitude.com</h4><h4 id="quantummetric-com"><a href="#quantummetric-com" class="headerlink" title="quantummetric.com"></a>quantummetric.com</h4><h4 id="braze-com"><a href="#braze-com" class="headerlink" title="braze.com"></a>braze.com</h4><h4 id="kochava-com"><a href="#kochava-com" class="headerlink" title="kochava.com"></a>kochava.com</h4><h4 id="appcenter-ms"><a href="#appcenter-ms" class="headerlink" title="appcenter.ms"></a>appcenter.ms</h4><ul>
+<li>in.appcenter.ms</li>
+</ul>
+<h4 id="app-measurement-com"><a href="#app-measurement-com" class="headerlink" title="app-measurement.com"></a>app-measurement.com</h4><h4 id="crashlytics-com"><a href="#crashlytics-com" class="headerlink" title="crashlytics.com"></a>crashlytics.com</h4><ul>
+<li>settings.crashlytics.com</li>
+<li>e.crashlytics.com</li>
+</ul>
+<h3 id="payment"><a href="#payment" class="headerlink" title="payment"></a>payment</h3><h4 id="stripe-com"><a href="#stripe-com" class="headerlink" title="stripe.com"></a>stripe.com</h4><p>api.stripe.com</p>
+<h3 id="App-Analytics-China"><a href="#App-Analytics-China" class="headerlink" title="App Analytics(China)"></a>App Analytics(China)</h3><h4 id="mob-com"><a href="#mob-com" class="headerlink" title="mob.com"></a>mob.com</h4><ul>
+<li>m.data.mob.com</li>
+</ul>
+<h4 id="umeng"><a href="#umeng" class="headerlink" title="umeng"></a>umeng</h4>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/toollink">tool_link</a></li>
+         
+          <li><a href="/bloglink">blog_link</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#third-party-api-security"><span class="toc-number">1.</span> <span class="toc-text">third party api security</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uage-of-third-party-api"><span class="toc-number">2.</span> <span class="toc-text">uage of third party api</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#security-issue"><span class="toc-number">2.1.</span> <span class="toc-text">security issue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#some-api-service-may-had-the-security-issue"><span class="toc-number">2.2.</span> <span class="toc-text">some api service may had the security issue</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#upload-the-image"><span class="toc-number">2.2.1.</span> <span class="toc-text">upload the image</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#map"><span class="toc-number">2.2.2.</span> <span class="toc-text">map</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#amap-高德地图开放API-https-lbs-amap-com"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">amap(高德地图开放API)(https:&#x2F;&#x2F;lbs.amap.com&#x2F;)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#baidu-map-sdk"><span class="toc-number">2.2.2.2.</span> <span class="toc-text">baidu map sdk</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App-Analytics"><span class="toc-number">3.</span> <span class="toc-text">App Analytics</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#branch-io"><span class="toc-number">3.1.</span> <span class="toc-text">branch.io</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#api-amplitude-com"><span class="toc-number">3.2.</span> <span class="toc-text">api.amplitude.com</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#quantummetric-com"><span class="toc-number">3.3.</span> <span class="toc-text">quantummetric.com</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#braze-com"><span class="toc-number">3.4.</span> <span class="toc-text">braze.com</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kochava-com"><span class="toc-number">3.5.</span> <span class="toc-text">kochava.com</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#appcenter-ms"><span class="toc-number">3.6.</span> <span class="toc-text">appcenter.ms</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#app-measurement-com"><span class="toc-number">3.7.</span> <span class="toc-text">app-measurement.com</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#crashlytics-com"><span class="toc-number">3.8.</span> <span class="toc-text">crashlytics.com</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#payment"><span class="toc-number">4.</span> <span class="toc-text">payment</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#stripe-com"><span class="toc-number">4.1.</span> <span class="toc-text">stripe.com</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App-Analytics-China"><span class="toc-number">5.</span> <span class="toc-text">App Analytics(China)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mob-com"><span class="toc-number">5.1.</span> <span class="toc-text">mob.com</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#umeng"><span class="toc-number">5.2.</span> <span class="toc-text">umeng</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://k3mlol.github.io/2020/02/26/third-party-api/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://k3mlol.github.io/2020/02/26/third-party-api/&text=third-party-api" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://k3mlol.github.io/2020/02/26/third-party-api/&title=third-party-api" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://k3mlol.github.io/2020/02/26/third-party-api/&is_video=false&description=third-party-api" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=third-party-api&body=Check out this article: https://k3mlol.github.io/2020/02/26/third-party-api/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://k3mlol.github.io/2020/02/26/third-party-api/&title=third-party-api" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://k3mlol.github.io/2020/02/26/third-party-api/&title=third-party-api" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://k3mlol.github.io/2020/02/26/third-party-api/&title=third-party-api" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://k3mlol.github.io/2020/02/26/third-party-api/&title=third-party-api" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://k3mlol.github.io/2020/02/26/third-party-api/&name=third-party-api&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://k3mlol.github.io/2020/02/26/third-party-api/&t=third-party-api" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 k3mlol
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/toollink">tool_link</a></li>
+         
+          <li><a href="/bloglink">blog_link</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
