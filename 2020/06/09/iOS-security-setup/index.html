@@ -14,7 +14,7 @@
 <meta property="og:description" content="iOS security test set uptoolsjailbreakhttps:&#x2F;&#x2F;checkra.in&#x2F; pluginssome library must install for cydia  cydia Substrate  openssh server  liberty-liteadd sourcehttps:&#x2F;&#x2F;ryleyangus.com&#x2F;repo&#x2F;install liberty">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-09T09:54:36.000Z">
-<meta property="article:modified_time" content="2020-06-10T02:44:31.962Z">
+<meta property="article:modified_time" content="2020-06-10T03:00:18.612Z">
 <meta property="article:author" content="k3mlol">
 <meta property="article:tag" content="app security">
 <meta property="article:tag" content="iOS">
@@ -111,7 +111,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#iOS-security-test-set-up"><span class="toc-number">1.</span> <span class="toc-text">iOS security test set up</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tools"><span class="toc-number">1.0.1.</span> <span class="toc-text">tools</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#jailbreak"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">jailbreak</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#plugins"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">plugins</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Mac-install-software"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">Mac install software</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#basic-usage"><span class="toc-number">1.0.2.</span> <span class="toc-text">basic usage</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reference"><span class="toc-number">1.1.</span> <span class="toc-text">reference</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#iOS-security-test-set-up"><span class="toc-number">1.</span> <span class="toc-text">iOS security test set up</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tools"><span class="toc-number">1.0.1.</span> <span class="toc-text">tools</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#jailbreak"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">jailbreak</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#plugins"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">plugins</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Mac-install-software"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">Mac install software</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#basic-usage"><span class="toc-number">1.0.2.</span> <span class="toc-text">basic usage</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#bypass-jailbreak-detect"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">bypass jailbreak detect</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reference"><span class="toc-number">1.1.</span> <span class="toc-text">reference</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -180,12 +180,24 @@
 </li>
 <li><p>frida-iOS-dump<br><a href="https://github.com/AloneMonkey/frida-ios-dump" target="_blank" rel="noopener">https://github.com/AloneMonkey/frida-ios-dump</a></p>
 </li>
+<li><p>theos</p>
+</li>
 </ul>
 <h4 id="basic-usage"><a href="#basic-usage" class="headerlink" title="basic usage"></a>basic usage</h4><ol>
 <li>using the <strong>frida-iOS-dump</strong> pull a decrypted IPA from a jailbroken device</li>
 <li>unzip the ipa</li>
 <li>class-dump -H /Users/mac/Desktop/Payload/example.app -o /Users/mac/Desktop/Payload</li>
+<li>generate the xm file<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logify.pl example.h &gt; tewak.xm</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
+<h5 id="bypass-jailbreak-detect"><a href="#bypass-jailbreak-detect" class="headerlink" title="bypass jailbreak detect"></a>bypass jailbreak detect</h5><p>Yes, as a bug hunter script boy, I know myself quite well. Know what I can do, what I never can’t do</p>
+<p>Xcon is old, no need to use it.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;Super-Advanced-Jailbreak-Detection-Bypass.xm&quot;</span><br><span class="line"></span><br><span class="line">%hook ANSMetadata</span><br><span class="line">-(bool)computeIsJailbroken &#123; return false; &#125;</span><br><span class="line">-(bool)isJailbroken &#123; return false; &#125;</span><br><span class="line">%end</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a href="http://iosre.com/t/app/15011/19" target="_blank" rel="noopener">http://iosre.com/t/app/15011/19</a></li>
+</ul>
 <h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul>
 <li><a href="https://mrmad.com.tw/liberty-lite" target="_blank" rel="noopener">https://mrmad.com.tw/liberty-lite</a></li>
 </ul>
@@ -218,7 +230,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#iOS-security-test-set-up"><span class="toc-number">1.</span> <span class="toc-text">iOS security test set up</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tools"><span class="toc-number">1.0.1.</span> <span class="toc-text">tools</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#jailbreak"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">jailbreak</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#plugins"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">plugins</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Mac-install-software"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">Mac install software</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#basic-usage"><span class="toc-number">1.0.2.</span> <span class="toc-text">basic usage</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reference"><span class="toc-number">1.1.</span> <span class="toc-text">reference</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#iOS-security-test-set-up"><span class="toc-number">1.</span> <span class="toc-text">iOS security test set up</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tools"><span class="toc-number">1.0.1.</span> <span class="toc-text">tools</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#jailbreak"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">jailbreak</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#plugins"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">plugins</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Mac-install-software"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">Mac install software</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#basic-usage"><span class="toc-number">1.0.2.</span> <span class="toc-text">basic usage</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#bypass-jailbreak-detect"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">bypass jailbreak detect</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reference"><span class="toc-number">1.1.</span> <span class="toc-text">reference</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
