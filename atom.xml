@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>k3mloldeblog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://k3mlol.github.io/"/>
+  <updated>2020-07-15T06:22:53.192Z</updated>
+  <id>https://k3mlol.github.io/</id>
+  
+  <author>
+    <name>k3mlol</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bug hunter platform corrupt?</title>
+    <link href="https://k3mlol.github.io/bug-hunter-platform-corrupt/"/>
+    <id>https://k3mlol.github.io/bug-hunter-platform-corrupt/</id>
+    <published>2020-07-15T02:14:00.000Z</published>
+    <updated>2020-07-15T06:22:53.192Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="No-bounty-No-security"><a href="#No-bounty-No-security" class="headerlink" title="No bounty No security"></a>No bounty No security</h3><p>cyber security is the part of company just like develop new system.<br>More and More compnay realize that cyber security is important,especially the EU GDPR is publised, some cases are fined huge ticket.</p><p>so the company start bug bounty program(build their own platform or attend the bug hunter platform).<br>their digital assest is huge,most of the Fortune 500 even can’t make a list of all owned assest(this is I guess,no data support). the weired thing is: some security researchers submit the vulnerability reports to them for free. How to make use of that? start a VDP program,No money just acknowledge.</p><p>yes, the VDP program is the bridge of the company and security researchers, the company open a path to accepct the vulnerability report. But this is just a transitional way. </p><p>No doubt that if you are new to bug hunter, you can start the VDP program,because it’s more easily to find the flaw. I’m not suggest keep submit vulnerability report for free. this will posion the bug hunter enviroment.</p><p>No money no security,vulnerability report also need something to prove value.</p><h3 id="Reality"><a href="#Reality" class="headerlink" title="Reality"></a>Reality</h3><p>I saw some security researchers submit the vulnerability report to bug bounty program(BBP),but the program refuse pay for them,some common reasons below: </p><ol><li>we know it internal</li><li>no attack scenario</li><li>out of policy</li></ol><p>if you have trobule with the bug bounty program, the platform Mediation isn’t help, the best way is make the report public.</p><p>then you leave the program, write a post sick on them, stay away from the BBP which make you feel sick, which will harm you feeling.</p><h3 id="Suggestion"><a href="#Suggestion" class="headerlink" title="Suggestion"></a>Suggestion</h3><h4 id="assest-in-scope-or-not"><a href="#assest-in-scope-or-not" class="headerlink" title="assest in scope or not"></a>assest in scope or not</h4><p>when you dig a BBP, you’re better check the program policy, the assest in scope or some assest out of scope.<br>Not all company pay for the all the assest, you must know that.</p><h4 id="prove-it-not-exploit-it"><a href="#prove-it-not-exploit-it" class="headerlink" title="prove it not exploit it"></a>prove it not exploit it</h4><p>some action is also out of scope, For example, you find a RCE, upload the webshell is not a good action. you just need to prove it, not exploit the system.</p><h4 id="in-patience"><a href="#in-patience" class="headerlink" title="in patience"></a>in patience</h4><p>when you submit the report and traiged, it’s unnecessary to keep asking the the when pay for the bounty, some programs are paid slowly. what you can do is keep submmit next report.</p><h4 id="be-gentleman"><a href="#be-gentleman" class="headerlink" title="be gentleman"></a>be gentleman</h4><p>when you come cross the situation(don’t want to pay for the bounty,or pay less bounty what you expect), it’s unnecessary to fuck them up or keep squabble with them, don’t waste you time on that. you just need request Mediation, in the end this is not help, you can leave the program or turn to other program.</p><h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3><p>I hope the suggestions can help you earn more $$$$ at your bug bounty journy. Bug bounty just a quite small part of Enterprise cyber security construction. if you really want to push youself to cyber security, keep learning!</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;No-bounty-No-security&quot;&gt;&lt;a href=&quot;#No-bounty-No-security&quot; class=&quot;headerlink&quot; title=&quot;No bounty No security&quot;&gt;&lt;/a&gt;No bounty No security&lt;/
+      
+    
+    </summary>
+    
+    
+    
+      <category term="bug hunter" scheme="https://k3mlol.github.io/tags/bug-hunter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>xss-csp</title>
+    <link href="https://k3mlol.github.io/xss-csp/"/>
+    <id>https://k3mlol.github.io/xss-csp/</id>
+    <published>2020-06-11T03:11:29.000Z</published>
+    <updated>2020-06-11T03:18:39.921Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h3><p>the future of XSS is the CSP.</p><p>writeup</p><ul><li><a href="https://blog.bentkowski.info/2018/06/xss-in-google-colaboratory-csp-bypass.html" target="_blank" rel="noopener">https://blog.bentkowski.info/2018/06/xss-in-google-colaboratory-csp-bypass.html</a></li><li><a href="https://blog.deteact.com/csp-bypass/" target="_blank" rel="noopener">https://blog.deteact.com/csp-bypass/</a></li><li><a href="https://medium.com/bugbountywriteup/making-an-xss-triggered-by-csp-bypass-on-twitter-561f107be3e5" target="_blank" rel="noopener">https://medium.com/bugbountywriteup/making-an-xss-triggered-by-csp-bypass-on-twitter-561f107be3e5</a></li></ul><p>hackeorne report</p><ul><li><a href="https://hackerone.com/reports/47472" target="_blank" rel="noopener">https://hackerone.com/reports/47472</a></li><li><a href="https://hackerone.com/reports/153666" target="_blank" rel="noopener">https://hackerone.com/reports/153666</a></li><li><a href="https://hackerone.com/reports/199779" target="_blank" rel="noopener">https://hackerone.com/reports/199779</a></li><li><a href="https://hackerone.com/reports/241192" target="_blank" rel="noopener">https://hackerone.com/reports/241192</a></li><li><a href="https://hackerone.com/reports/250729" target="_blank" rel="noopener">https://hackerone.com/reports/250729</a></li></ul><p>CSP check weakness</p><ul><li><a href="https://csp-evaluator.withgoogle.com/" target="_blank" rel="noopener">https://csp-evaluator.withgoogle.com/</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;introduction&quot;&gt;&lt;a href=&quot;#introduction&quot; class=&quot;headerlink&quot; title=&quot;introduction&quot;&gt;&lt;/a&gt;introduction&lt;/h3&gt;&lt;p&gt;the future of XSS is the CSP.&lt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="xss" scheme="https://k3mlol.github.io/tags/xss/"/>
+    
+      <category term="csp" scheme="https://k3mlol.github.io/tags/csp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS_security_setup</title>
+    <link href="https://k3mlol.github.io/iOS-security-setup/"/>
+    <id>https://k3mlol.github.io/iOS-security-setup/</id>
+    <published>2020-06-09T09:54:36.000Z</published>
+    <updated>2020-06-10T03:36:49.816Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="iOS-security-test-set-up"><a href="#iOS-security-test-set-up" class="headerlink" title="iOS security test set up"></a>iOS security test set up</h2><h4 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h4><h5 id="jailbreak"><a href="#jailbreak" class="headerlink" title="jailbreak"></a>jailbreak</h5><p><a href="https://checkra.in/" target="_blank" rel="noopener">https://checkra.in/</a></p><h5 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h5><p>some library must install for cydia</p><ul><li><p>cydia Substrate</p></li><li><p>openssh server</p></li><li><p>liberty-lite<br>add source<br><a href="https://ryleyangus.com/repo/" target="_blank" rel="noopener">https://ryleyangus.com/repo/</a><br>install liberty-lite</p></li><li><p>ssl-kill-switch2<br><a href="https://github.com/nabla-c0d3/ssl-kill-switch2/releases" target="_blank" rel="noopener">https://github.com/nabla-c0d3/ssl-kill-switch2/releases</a></p></li><li><p>frida<br><a href="https://frida.re/docs/ios/" target="_blank" rel="noopener">https://frida.re/docs/ios/</a></p></li></ul><h5 id="Mac-install-software"><a href="#Mac-install-software" class="headerlink" title="Mac install software"></a>Mac install software</h5><ul><li><p>class-dump</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install class-dump</span><br></pre></td></tr></table></figure></li><li><p>Monkeydev<br><a href="https://github.com/AloneMonkey/MonkeyDev" target="_blank" rel="noopener">https://github.com/AloneMonkey/MonkeyDev</a></p></li><li><p>iproxy</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install usbmuxd</span><br></pre></td></tr></table></figure></li><li><p>frida-iOS-dump<br><a href="https://github.com/AloneMonkey/frida-ios-dump" target="_blank" rel="noopener">https://github.com/AloneMonkey/frida-ios-dump</a></p></li><li><p>theos</p></li></ul><h4 id="basic-usage"><a href="#basic-usage" class="headerlink" title="basic usage"></a>basic usage</h4><ol><li>using the <strong>frida-iOS-dump</strong> pull a decrypted IPA from a jailbroken device</li><li>unzip the ipa</li><li>class-dump -H /Users/mac/Desktop/Payload/example.app -o /Users/mac/Desktop/Payload</li><li>generate the xm file<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logify.pl example.h &gt; tewak.xm</span><br></pre></td></tr></table></figure></li></ol><h5 id="bypass-jailbreak-detect"><a href="#bypass-jailbreak-detect" class="headerlink" title="bypass jailbreak detect"></a>bypass jailbreak detect</h5><p>Yes, as a bug hunter script boy, I know myself quite well. Know what I can do, what I never can’t do</p><p>Xcon is old, no need to use it.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;Super-Advanced-Jailbreak-Detection-Bypass.xm&quot;</span><br><span class="line"></span><br><span class="line">%hook ANSMetadata</span><br><span class="line">-(bool)computeIsJailbroken &#123; return false; &#125;</span><br><span class="line">-(bool)isJailbroken &#123; return false; &#125;</span><br><span class="line">%end</span><br></pre></td></tr></table></figure><ul><li><a href="http://iosre.com/t/app/15011/19" target="_blank" rel="noopener">http://iosre.com/t/app/15011/19</a></li></ul><h5 id="issue"><a href="#issue" class="headerlink" title="issue"></a>issue</h5><p>Xcode11 <strong>A valid provisioning profile for this executable was not found</strong><br>open file-&gt;Project Settings-&gt;change New Build System to <strong>Legacy Build System</strong></p><h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul><li><a href="https://mrmad.com.tw/liberty-lite" target="_blank" rel="noopener">https://mrmad.com.tw/liberty-lite</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;iOS-security-test-set-up&quot;&gt;&lt;a href=&quot;#iOS-security-test-set-up&quot; class=&quot;headerlink&quot; title=&quot;iOS security test set up&quot;&gt;&lt;/a&gt;iOS security t
+      
+    
+    </summary>
+    
+    
+    
+      <category term="app security" scheme="https://k3mlol.github.io/tags/app-security/"/>
+    
+      <category term="iOS" scheme="https://k3mlol.github.io/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>android-app-security</title>
+    <link href="https://k3mlol.github.io/android-app-security/"/>
+    <id>https://k3mlol.github.io/android-app-security/</id>
+    <published>2020-04-11T14:35:50.000Z</published>
+    <updated>2020-06-09T10:27:02.521Z</updated>
+    
+    <content type="html"><![CDATA[<p>thx, the community share the tips. Let’s make the world more safe.</p><h3 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h3><p>search the url scheme</p><ol><li>apktool d target.apk</li><li>grep -rnF “deeplinkschema://“ ./target</li><li>Examine all deeplinks for insecure implementations</li></ol><h3 id="set-up-root-enviroment"><a href="#set-up-root-enviroment" class="headerlink" title="set up root enviroment"></a>set up root enviroment</h3><p>install magisk(not recommend using the Huawei,Samsung,Vivo,OPPO,Xiaomi),the google Nexus will be the best choice for app test.</p><p>install the <strong>Move Certificates</strong> plugin to capture the network flow.</p><p>Reason:</p><ol><li>some apps must install Google play framework to open</li><li>Nexus unlock the phone is quite easy,install magisk must install the <strong>TWRP</strong></li></ol><ul><li><a href="https://www.xda-developers.com/how-to-install-magisk/" target="_blank" rel="noopener">https://www.xda-developers.com/how-to-install-magisk/</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;thx, the community share the tips. Let’s make the world more safe.&lt;/p&gt;
+&lt;h3 id=&quot;tips&quot;&gt;&lt;a href=&quot;#tips&quot; class=&quot;headerlink&quot; title=&quot;tips&quot;&gt;&lt;/a&gt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="android" scheme="https://k3mlol.github.io/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>graphql-security</title>
+    <link href="https://k3mlol.github.io/graphql-security/"/>
+    <id>https://k3mlol.github.io/graphql-security/</id>
+    <published>2020-04-11T14:33:48.000Z</published>
+    <updated>2020-04-11T14:35:25.494Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h4><ul><li><a href="https://apis.guru/graphql-voyager/" target="_blank" rel="noopener">https://apis.guru/graphql-voyager/</a></li><li><a href="https://github.com/prisma-labs/graphql-playground/releases" target="_blank" rel="noopener">https://github.com/prisma-labs/graphql-playground/releases</a></li></ul><h4 id="referernce"><a href="#referernce" class="headerlink" title="referernce"></a>referernce</h4><ul><li><a href="https://medium.com/@the.bilal.rizwan/graphql-common-vulnerabilities-how-to-exploit-them-464f9fdce696" target="_blank" rel="noopener">https://medium.com/@the.bilal.rizwan/graphql-common-vulnerabilities-how-to-exploit-them-464f9fdce696</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;tools&quot;&gt;&lt;a href=&quot;#tools&quot; class=&quot;headerlink&quot; title=&quot;tools&quot;&gt;&lt;/a&gt;tools&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://apis.guru/graphql-voyager/&quot; target=
+      
+    
+    </summary>
+    
+    
+    
+      <category term="graphql" scheme="https://k3mlol.github.io/tags/graphql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>third-party-api-security</title>
+    <link href="https://k3mlol.github.io/third-party-api/"/>
+    <id>https://k3mlol.github.io/third-party-api/</id>
+    <published>2020-02-26T06:13:32.000Z</published>
+    <updated>2020-03-02T09:17:37.811Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="third-party-api-security"><a href="#third-party-api-security" class="headerlink" title="third party api security"></a>third party api security</h3><p>Most app contain the third party api service, there are security issue releated to it.</p><h3 id="uage-of-third-party-api"><a href="#uage-of-third-party-api" class="headerlink" title="uage of third party api"></a>uage of third party api</h3><ul><li>log file upload(upload the app error)</li><li>App Analytics</li><li>online map api</li><li>upload the image</li><li>payment</li><li>search API</li><li>Language Translation and Content Localization Solutions</li></ul><h4 id="security-issue"><a href="#security-issue" class="headerlink" title="security issue"></a>security issue</h4><ul><li>misconfigure api key access(the secret_key or access_key can read or modify other endpoint data)</li><li>upload the log file contain the sensitive information(token,session,password)</li></ul><h4 id="some-api-service-may-had-the-security-issue"><a href="#some-api-service-may-had-the-security-issue" class="headerlink" title="some api service may had the security issue"></a>some api service may had the security issue</h4><h5 id="upload-the-image"><a href="#upload-the-image" class="headerlink" title="upload the image"></a>upload the image</h5><ul><li>aliyun OSS<br>aliyun OSS if just for upload the file, coder should set just write privilege not the read. But, most common problem is set as both.<br>aliyun OSS secret key can read or write the file<br><a href="https://github.com/aliyun/oss-browser/releases" target="_blank" rel="noopener">oss-browser</a></li></ul><h5 id="map"><a href="#map" class="headerlink" title="map"></a>map</h5><h6 id="amap-高德地图开放API-https-lbs-amap-com"><a href="#amap-高德地图开放API-https-lbs-amap-com" class="headerlink" title="amap(高德地图开放API)(https://lbs.amap.com/)"></a>amap(高德地图开放API)(<a href="https://lbs.amap.com/" target="_blank" rel="noopener">https://lbs.amap.com/</a>)</h6><ul><li>yuntuapi.amap.com<br>the api should not use at client side(APP or WEB), the endpoint is for manage the data.</li></ul><h6 id="baidu-map-sdk"><a href="#baidu-map-sdk" class="headerlink" title="baidu map sdk"></a>baidu map sdk</h6><ul><li>api.map.baidu.com</li></ul><h6 id="Mapbox"><a href="#Mapbox" class="headerlink" title="Mapbox"></a>Mapbox</h6><ul><li><a href="https://www.mapbox.com/" target="_blank" rel="noopener">https://www.mapbox.com/</a></li></ul><hr><h4 id="branch-io"><a href="#branch-io" class="headerlink" title="branch.io"></a>branch.io</h4><ul><li>api.branch.io<br><a href="https://help.branch.io/developers-hub/docs/ios-full-reference" target="_blank" rel="noopener">document</a></li></ul><h4 id="api-amplitude-com"><a href="#api-amplitude-com" class="headerlink" title="api.amplitude.com"></a>api.amplitude.com</h4><p><a href="https://help.amplitude.com/hc/en-us/categories/200409887-Getting-Started" target="_blank" rel="noopener">document</a></p><h3 id="track-user-and-improve-the-customer-Experience"><a href="#track-user-and-improve-the-customer-Experience" class="headerlink" title="track user and improve the customer Experience"></a>track user and improve the customer Experience</h3><h4 id="quantummetric-com"><a href="#quantummetric-com" class="headerlink" title="quantummetric.com"></a>quantummetric.com</h4><p>[no document yet]</p><h4 id="braze-com"><a href="#braze-com" class="headerlink" title="braze.com"></a>braze.com</h4><p><a href="https://www.braze.com/docs/api/identifier_types/" target="_blank" rel="noopener">docuemnt</a></p><h4 id="kochava-com"><a href="#kochava-com" class="headerlink" title="kochava.com"></a>kochava.com</h4><p><a href="https://support.kochava.com/server-to-server-integration/server-to-server-integration-overview/" target="_blank" rel="noopener">docuemnt</a></p><h3 id="app-error-log"><a href="#app-error-log" class="headerlink" title="app error log"></a>app error log</h3><h4 id="appcenter-ms"><a href="#appcenter-ms" class="headerlink" title="appcenter.ms"></a>appcenter.ms</h4><ul><li>in.appcenter.ms<br><a href="https://openapi.appcenter.ms/" target="_blank" rel="noopener">docuemnt</a></li></ul><h4 id="app-measurement-com-google-ad-services"><a href="#app-measurement-com-google-ad-services" class="headerlink" title="app-measurement.com(google ad services)"></a>app-measurement.com(google ad services)</h4><h4 id="crashlytics-com-google-firebase-service"><a href="#crashlytics-com-google-firebase-service" class="headerlink" title="crashlytics.com(google firebase service)"></a>crashlytics.com(google firebase service)</h4><ul><li>settings.crashlytics.com</li><li>e.crashlytics.com</li></ul><h4 id="New-Relic"><a href="#New-Relic" class="headerlink" title="New Relic"></a>New Relic</h4><p><a href="https://docs.newrelic.com/docs/insights/insights-api/manage-dashboards/insights-dashboard-api" target="_blank" rel="noopener">docuemnt</a></p><h3 id="Language-Translation-and-Content-Localization-Solutions"><a href="#Language-Translation-and-Content-Localization-Solutions" class="headerlink" title="Language Translation and Content Localization Solutions"></a>Language Translation and Content Localization Solutions</h3><h4 id="smartling-com"><a href="#smartling-com" class="headerlink" title="smartling.com"></a>smartling.com</h4><ul><li><a href="https://www.smartling.com/" target="_blank" rel="noopener">https://www.smartling.com/</a><br>this service is really suck, because will send the front code to their server.<br>if the user visit the page contain the sensitive data(api secret key,bank account,email, phone number etc) the data will also send to their server.</li></ul><h3 id="payment"><a href="#payment" class="headerlink" title="payment"></a>payment</h3><h3 id="search-API"><a href="#search-API" class="headerlink" title="search API"></a>search API</h3><h4 id="algolia"><a href="#algolia" class="headerlink" title="algolia"></a>algolia</h4><ul><li><a href="https://www.algolia.com/doc/rest-api/search/" target="_blank" rel="noopener">https://www.algolia.com/doc/rest-api/search/</a></li></ul><h4 id="stripe-com"><a href="#stripe-com" class="headerlink" title="stripe.com"></a>stripe.com</h4><p>api.stripe.com</p><h3 id="App-Analytics-China"><a href="#App-Analytics-China" class="headerlink" title="App Analytics(China)"></a>App Analytics(China)</h3><h4 id="mob-com"><a href="#mob-com" class="headerlink" title="mob.com"></a>mob.com</h4><ul><li>m.data.mob.com</li></ul><h4 id="umeng"><a href="#umeng" class="headerlink" title="umeng"></a>umeng</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;third-party-api-security&quot;&gt;&lt;a href=&quot;#third-party-api-security&quot; class=&quot;headerlink&quot; title=&quot;third party api security&quot;&gt;&lt;/a&gt;third party ap
+      
+    
+    </summary>
+    
+    
+    
+      <category term="api security" scheme="https://k3mlol.github.io/tags/api-security/"/>
+    
+      <category term="data security" scheme="https://k3mlol.github.io/tags/data-security/"/>
+    
+      <category term="app security" scheme="https://k3mlol.github.io/tags/app-security/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>msrc</title>
+    <link href="https://k3mlol.github.io/msrc/"/>
+    <id>https://k3mlol.github.io/msrc/</id>
+    <published>2020-02-24T02:03:27.000Z</published>
+    <updated>2020-02-24T02:29:15.182Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="MSRC-information"><a href="#MSRC-information" class="headerlink" title="MSRC information"></a>MSRC information</h3><h4 id="blog"><a href="#blog" class="headerlink" title="blog"></a>blog</h4><ul><li><a href="https://msrc-blog.microsoft.com/" target="_blank" rel="noopener">https://msrc-blog.microsoft.com/</a></li></ul><h4 id="submit-the-report"><a href="#submit-the-report" class="headerlink" title="submit the report"></a>submit the report</h4><ul><li><p><a href="https://msrc.microsoft.com/" target="_blank" rel="noopener">https://msrc.microsoft.com/</a></p></li><li><p><a href="https://www.microsoft.com/en-us/msrc?rtc=4" target="_blank" rel="noopener">https://www.microsoft.com/en-us/msrc?rtc=4</a></p></li></ul><h5 id="cloud-program"><a href="#cloud-program" class="headerlink" title="cloud program"></a>cloud program</h5><ul><li><a href="https://www.microsoft.com/en-us/msrc/bounty-microsoft-azure" target="_blank" rel="noopener">Microsoft Azure</a></li><li><a href="https://www.microsoft.com/en-us/msrc/bounty-microsoft-identity?rtc=1" target="_blank" rel="noopener">Microsoft Identity</a></li><li><a href="http://microsoft.com/en-us/msrc/bounty-xbox" target="_blank" rel="noopener">Xbox (NEW)</a></li><li><a href="https://www.microsoft.com/en-us/msrc/bounty-microsoft-cloud?rtc=1" target="_blank" rel="noopener">Microsoft Online Services</a></li><li><a href="https://www.microsoft.com/en-us/msrc/bounty-azure-devops" target="_blank" rel="noopener">Microsoft Azure DevOps Services</a></li><li>Microsoft Dynamics 365</li><li>Microsoft .NET Core and ASP.NET Core</li></ul><h5 id="Platform-Programs"><a href="#Platform-Programs" class="headerlink" title="Platform Programs"></a>Platform Programs</h5><p>…</p><h5 id="Defense-amp-Grant-Programs"><a href="#Defense-amp-Grant-Programs" class="headerlink" title="Defense &amp; Grant Programs"></a>Defense &amp; Grant Programs</h5><p>…</p><h4 id="how-to-receive-the-bounty"><a href="#how-to-receive-the-bounty" class="headerlink" title="how to receive the bounty"></a>how to receive the bounty</h4><ul><li>HackerOne</li><li>Bugcrowd</li><li>Microsoft internal payment system(monthly)</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;MSRC-information&quot;&gt;&lt;a href=&quot;#MSRC-information&quot; class=&quot;headerlink&quot; title=&quot;MSRC information&quot;&gt;&lt;/a&gt;MSRC information&lt;/h3&gt;&lt;h4 id=&quot;blog&quot;&gt;&lt;a 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="bug bounty" scheme="https://k3mlol.github.io/tags/bug-bounty/"/>
+    
+      <category term="Microsoft Bug Bounty Program" scheme="https://k3mlol.github.io/tags/Microsoft-Bug-Bounty-Program/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>begin-codeql</title>
+    <link href="https://k3mlol.github.io/begin-codeql/"/>
+    <id>https://k3mlol.github.io/begin-codeql/</id>
+    <published>2020-02-21T06:59:22.000Z</published>
+    <updated>2020-02-21T07:23:52.820Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="install-step-by-step"><a href="#install-step-by-step" class="headerlink" title="install step by step"></a>install step by step</h3><ol><li><p><a href="https://github.com/github/codeql-cli-binaries/releases/latest/download/codeql.zip" target="_blank" rel="noopener">https://github.com/github/codeql-cli-binaries/releases/latest/download/codeql.zip</a> downnload the binary program</p></li><li><p><a href="https://github.com/Semmle/ql" target="_blank" rel="noopener">https://github.com/Semmle/ql</a> download the library</p></li><li><p>install VScode and CodeQL extension</p></li></ol><h3 id="Create-A-Database"><a href="#Create-A-Database" class="headerlink" title="Create A Database"></a>Create A Database</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">codeql database create jstest --language=javascript</span><br></pre></td></tr></table></figure><hr><h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul><li><a href="https://securitylab.github.com/research" target="_blank" rel="noopener">https://securitylab.github.com/research</a></li><li><a href="https://securitylab.github.com/tools/codeql" target="_blank" rel="noopener">https://securitylab.github.com/tools/codeql</a></li><li><a href="https://lgtm.com/" target="_blank" rel="noopener">https://lgtm.com/</a></li><li><a href="https://github.com/github/vscode-codeql-starter" target="_blank" rel="noopener">https://github.com/github/vscode-codeql-starter</a></li><li><a href="https://help.semmle.com/QL/learn-ql/java/ql-for-java.html" target="_blank" rel="noopener">https://help.semmle.com/QL/learn-ql/java/ql-for-java.html</a></li><li><a href="https://medium.com/@knownsec404team/run-queries-on-codebases-with-codeql-d304f238022b" target="_blank" rel="noopener">https://medium.com/@knownsec404team/run-queries-on-codebases-with-codeql-d304f238022b</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;install-step-by-step&quot;&gt;&lt;a href=&quot;#install-step-by-step&quot; class=&quot;headerlink&quot; title=&quot;install step by step&quot;&gt;&lt;/a&gt;install step by step&lt;/h3&gt;&lt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="code audit" scheme="https://k3mlol.github.io/tags/code-audit/"/>
+    
+      <category term="CodeQL" scheme="https://k3mlol.github.io/tags/CodeQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>app-pentest</title>
+    <link href="https://k3mlol.github.io/app-pentest/"/>
+    <id>https://k3mlol.github.io/app-pentest/</id>
+    <published>2020-02-06T12:01:34.000Z</published>
+    <updated>2020-03-22T11:26:05.569Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="iOS-APP"><a href="#iOS-APP" class="headerlink" title="iOS APP"></a>iOS APP</h4><h5 id="Tweak"><a href="#Tweak" class="headerlink" title="Tweak"></a>Tweak</h5><ul><li>StoreSwitcher 2</li></ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add source http://subdiox.com/cydia</span><br><span class="line"></span><br><span class="line">install StoreSwitcher 2</span><br></pre></td></tr></table></figure><ul><li><a href="https://frida.re/docs/ios/#with-jailbreak" target="_blank" rel="noopener">frida</a></li></ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Start Cydia and add Frida’s repository by going to Manage -&gt; Sources -&gt; </span><br><span class="line"></span><br><span class="line">Edit -&gt; Add and enter https://build.frida.re. </span><br><span class="line"></span><br><span class="line">You should now be able to find and install the Frida package which lets</span><br><span class="line"></span><br><span class="line">Frida inject JavaScript into apps running on your iOS device. </span><br><span class="line"></span><br><span class="line">This happens over USB, so you will need to have your USB cable handy, </span><br><span class="line"></span><br><span class="line">though there’s no need to plug it in just yet.</span><br></pre></td></tr></table></figure><ul><li><a href="https://github.com/nabla-c0d3/ssl-kill-switch2/releases" target="_blank" rel="noopener">ssl kill switch 2</a></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/nabla-c0d3/ssl-kill-switch2/releases/download/0.14/com.nablac0d3.sslkillswitch2_0.14.deb</span><br><span class="line"></span><br><span class="line"><span class="comment">#copy to iphone</span></span><br><span class="line"></span><br><span class="line">dpkg -i com.nablac0d3.sslkillswitch2_0.14.deb</span><br></pre></td></tr></table></figure><h5 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h5><ul><li><a href="https://github.com/AloneMonkey/frida-ios-dump" target="_blank" rel="noopener">frida-ios-dump</a></li><li><a href="https://github.com/chaitin/passionfruit" target="_blank" rel="noopener">passionfruit</a></li></ul><h5 id="write-own-Tweak"><a href="#write-own-Tweak" class="headerlink" title="write own Tweak"></a>write own Tweak</h5><ul><li><a href="https://github.com/AloneMonkey/MonkeyDev" target="_blank" rel="noopener">MonkeyDev</a></li><li>frida</li></ul><hr><h5 id="Android-APP"><a href="#Android-APP" class="headerlink" title="Android APP"></a>Android APP</h5><ul><li>drozer</li><li>pidcat</li><li>JustTrustMe.apk</li><li>Inspeckage_2.4.apk</li></ul><h5 id="write-own-plugin"><a href="#write-own-plugin" class="headerlink" title="write own plugin"></a>write own plugin</h5><ul><li>frida</li><li>Xposed</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;iOS-APP&quot;&gt;&lt;a href=&quot;#iOS-APP&quot; class=&quot;headerlink&quot; title=&quot;iOS APP&quot;&gt;&lt;/a&gt;iOS APP&lt;/h4&gt;&lt;h5 id=&quot;Tweak&quot;&gt;&lt;a href=&quot;#Tweak&quot; class=&quot;headerlink&quot; ti
+      
+    
+    </summary>
+    
+    
+    
+      <category term="app pentest" scheme="https://k3mlol.github.io/tags/app-pentest/"/>
+    
+      <category term="frida" scheme="https://k3mlol.github.io/tags/frida/"/>
+    
+      <category term="passionfruit" scheme="https://k3mlol.github.io/tags/passionfruit/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>bug_hunter_tool</title>
+    <link href="https://k3mlol.github.io/bug-hunter-tool-design/"/>
+    <id>https://k3mlol.github.io/bug-hunter-tool-design/</id>
+    <published>2020-01-19T06:02:14.000Z</published>
+    <updated>2020-02-21T07:06:50.799Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="demand"><a href="#demand" class="headerlink" title="demand"></a>demand</h3><p>As a bug hunter, we must firstly sbumit the report to earn the ez bounty.</p><p>so I need to build the tool to do my recon work automatically and timing</p><ul><li>enmurate the subdomain</li><li>scan ip port open state</li><li>fingerprint of the web system</li></ul><p>the best plan is the system info me the new assets or port online, I can start to work.</p><ul><li>log my burp</li></ul><p>I have the bunch endpoint and parameter from burpsuit, I need to store for future work, especially some key request and response which are I consider had the vuln or will have the vuln.</p><ul><li>automatically upload the assest from burp</li></ul><p>there are so many tool for collecting the subdomain, Amass,aquatone,Fuzz domain and so on. but I find that the tool miss some subdomain, especially from the APP, I want to one click to upload the new assets.</p><ul><li>plugin scan</li></ul><p>yes, the web application vulnerability scanner(Nessus,AWVS,AppScan) can’t found the awesome vuln, but I still need it to help me reduce the heavy work. For example, the Jira had the unauth CVE, once I get the POC, I can start scanning the project.</p><p>plugin scan just scan quite vuln.</p><ul><li>proving system</li></ul><p>this is for me write down some scripts to comfrim or test something, I need a system to store the response, elasticsearch will be chosen to store the data.</p><h3 id="Finally"><a href="#Finally" class="headerlink" title="Finally"></a>Finally</h3><p>as a part time bug hunter, I want to reduce the heavy and repetitive work, I can just focus on the vuln search, mostly, this is not a easy work, because I see most web system just had the login page. challenge work deserve big bounty.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;demand&quot;&gt;&lt;a href=&quot;#demand&quot; class=&quot;headerlink&quot; title=&quot;demand&quot;&gt;&lt;/a&gt;demand&lt;/h3&gt;&lt;p&gt;As a bug hunter, we must firstly sbumit the report to 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="bug hunter" scheme="https://k3mlol.github.io/tags/bug-hunter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://k3mlol.github.io/hello-world/"/>
+    <id>https://k3mlol.github.io/hello-world/</id>
+    <published>2019-12-31T16:00:00.000Z</published>
+    <updated>2020-04-11T14:40:52.129Z</updated>
+    
+    <content type="html"><![CDATA[<p>new blog online, more international.<br>2020 gogogo.</p><p>hexo command</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new page </span><br><span class="line">hexo s</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>proud to use Hexo and <a href="https://github.com/probberechts/hexo-theme-cactus" target="_blank" rel="noopener">hexo-theme-cactus</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;new blog online, more international.&lt;br&gt;2020 gogogo.&lt;/p&gt;
+&lt;p&gt;hexo command&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
