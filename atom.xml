@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://k3mlol.github.io/"/>
-  <updated>2020-07-15T06:22:53.192Z</updated>
+  <updated>2020-09-03T02:13:28.389Z</updated>
   <id>https://k3mlol.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bug-bounty-program-not-recommend[keep_update]</title>
+    <link href="https://k3mlol.github.io/bug-bounty-program-not-recommend/"/>
+    <id>https://k3mlol.github.io/bug-bounty-program-not-recommend/</id>
+    <published>2020-09-03T01:46:53.000Z</published>
+    <updated>2020-09-03T02:13:28.389Z</updated>
+    
+    <content type="html"><![CDATA[<p>Here is the bug bounty program list, I’m not reconmend to hunt. it’s really waste the life.<br>if you are a non-profit organization, I’m willing to submit the report for free.<br>But feel free to hunt the company what you want.<br>If you find below any information is wrong, don’t hesitate to contact me, I will make it right.</p><hr><p>program: Leetcode<br>link: <a href="https://leetcode.com/bugbounty/" target="_blank" rel="noopener">https://leetcode.com/bugbounty/</a><br>reason: give the leetcode conis,but not the money<br>who experienced: k3mlol</p><hr><p>program:ebay Inc<br>link: <a href="https://pages.ebay.com/securitycenter/security_researchers.html" target="_blank" rel="noopener">https://pages.ebay.com/securitycenter/security_researchers.html</a><br>reason: just acknowledge,no bounty<br>who experienced: k3mlol</p><hr><p>if you also have the same experience, please contact me. I will stick them on it.</p><p>My emaill is hackerone test email.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Here is the bug bounty program list, I’m not reconmend to hunt. it’s really waste the life.&lt;br&gt;if you are a non-profit organization, I’m 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="bug bounty" scheme="https://k3mlol.github.io/tags/bug-bounty/"/>
+    
+  </entry>
   
   <entry>
     <title>bug hunter platform corrupt?</title>
