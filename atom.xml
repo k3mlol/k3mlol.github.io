@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://k3mlol.github.io/"/>
-  <updated>2020-09-03T02:13:28.389Z</updated>
+  <updated>2020-09-10T17:45:39.597Z</updated>
   <id>https://k3mlol.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>csrf is dead?</title>
+    <link href="https://k3mlol.github.io/csrf-is-dead/"/>
+    <id>https://k3mlol.github.io/csrf-is-dead/</id>
+    <published>2020-09-10T17:25:25.000Z</published>
+    <updated>2020-09-10T17:45:39.597Z</updated>
+    
+    <content type="html"><![CDATA[<p>CSRF is the classic web vulnerability. Most of bug bounty hunter submit this kind of reports.</p><p>but after the browser(Firefox,Chrome,MS edge) update the security feature(samesite) to avoid the track the user by using cookie and avoid the CSRF attack, CSRF is dead, most classic CSRF attack is dead.</p><p>samesite feature set up</p><p>our cookie will only be sent in a first-party context. In user terms, the cookie will only be sent if the site for the cookie matches the site currently shown in the browser’s URL bar.</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set</span>-Cookie: promo_shown=<span class="number">1</span>; SameSite=Strict</span><br></pre></td></tr></table></figure><p>The Lax label means cookies are only set when the domain in the URL of the browser matches the cookie’s domain—making it a first-party cookie.</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set</span>-Cookie: promo_shown=<span class="number">1</span>; SameSite=Lax</span><br></pre></td></tr></table></figure><h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul><li><a href="https://web.dev/samesite-cookies-explained/" target="_blank" rel="noopener">https://web.dev/samesite-cookies-explained/</a></li><li><a href="https://www.chromium.org/updates/same-site" target="_blank" rel="noopener">https://www.chromium.org/updates/same-site</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;CSRF is the classic web vulnerability. Most of bug bounty hunter submit this kind of reports.&lt;/p&gt;
+&lt;p&gt;but after the browser(Firefox,Chrome
+      
+    
+    </summary>
+    
+    
+    
+      <category term="CSRF" scheme="https://k3mlol.github.io/tags/CSRF/"/>
+    
+      <category term="samsite" scheme="https://k3mlol.github.io/tags/samsite/"/>
+    
+  </entry>
   
   <entry>
     <title>bug-bounty-program-not-recommend[keep_update]</title>
