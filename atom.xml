@@ -71,6 +71,32 @@
   </entry>
   
   <entry>
+    <title>k8s basic and supply chain</title>
+    <link href="https://k3mlol.github.io/k8s-supply-chain/"/>
+    <id>https://k3mlol.github.io/k8s-supply-chain/</id>
+    <published>2020-09-10T17:25:25.000Z</published>
+    <updated>2020-12-03T09:53:40.423Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="k8s-service"><a href="#k8s-service" class="headerlink" title="k8s service"></a>k8s service</h3><p>Kubernetes API Serve<br>local port:8080</p><p>secure port:6443<br>if configure the dashboard /ui</p><hr><p>etcd service<br>default port:2379<br>/v2/keys/?recursive=true -&gt; return all the value<br>/v2/members -&gt; return all member</p><hr><p>Kubelet service<br>default port:10250</p><p>/pods -&gt; return the pod information</p><hr><p>proxy service<br>defualt port:may be 3182<br>this is unauth proxy can visit the internal network</p><ul><li><a href="https://github.com/kubernetes/kubernetes/pull/71980" target="_blank" rel="noopener">https://github.com/kubernetes/kubernetes/pull/71980</a></li><li><a href="https://www.cloudfoundry.org/blog/k8s-api-server-proxy/" target="_blank" rel="noopener">https://www.cloudfoundry.org/blog/k8s-api-server-proxy/</a></li></ul><hr><h3 id="supply-chain"><a href="#supply-chain" class="headerlink" title="supply chain"></a>supply chain</h3><h4 id="docker-services"><a href="#docker-services" class="headerlink" title="docker services"></a>docker services</h4><p>Rest API(RCE)<br>default port:2375</p><p>/containers/json -&gt; get container running information</p><p>this is a proxy server. does not respond to non-proxy requests</p><hr><h3 id="port-gt-service"><a href="#port-gt-service" class="headerlink" title="port -&gt; service"></a>port -&gt; service</h3><p>8080/6443 kube-apiserver<br>10250/10255/4149 kubelet<br>2379 etcd<br>30000 dashboard<br>2375 docker api<br>10256 kube-proxy<br>9099 calico-felix<br>9090 prometheus</p><p>I collect the endpoint for test <a href="/bugbounty/k8s_api.txt">k8s-api</a></p><h4 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h4><ul><li><a href="https://www.freebuf.com/vuls/196993.html" target="_blank" rel="noopener">https://www.freebuf.com/vuls/196993.html</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;k8s-service&quot;&gt;&lt;a href=&quot;#k8s-service&quot; class=&quot;headerlink&quot; title=&quot;k8s service&quot;&gt;&lt;/a&gt;k8s service&lt;/h3&gt;&lt;p&gt;Kubernetes API Serve&lt;br&gt;local port
+      
+    
+    </summary>
+    
+    
+    
+      <category term="bug bounty" scheme="https://k3mlol.github.io/tags/bug-bounty/"/>
+    
+      <category term="k8s" scheme="https://k3mlol.github.io/tags/k8s/"/>
+    
+  </entry>
+  
+  <entry>
     <title>bug-bounty-program-not-recommend[keep_update]</title>
     <link href="https://k3mlol.github.io/bug-bounty-program-not-recommend/"/>
     <id>https://k3mlol.github.io/bug-bounty-program-not-recommend/</id>
