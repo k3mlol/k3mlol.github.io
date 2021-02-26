@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://k3mlol.github.io/"/>
-  <updated>2020-09-14T13:16:47.865Z</updated>
+  <updated>2021-02-26T03:10:05.511Z</updated>
   <id>https://k3mlol.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pypi-library-poison</title>
+    <link href="https://k3mlol.github.io/pypi-library-poison/"/>
+    <id>https://k3mlol.github.io/pypi-library-poison/</id>
+    <published>2021-02-26T02:47:18.000Z</published>
+    <updated>2021-02-26T03:10:05.511Z</updated>
+    
+    <content type="html"><![CDATA[<p>this is not just related to bug bounty, this attack can also be used in red team.</p><h3 id="step-by-step-to-publish-your-library"><a href="#step-by-step-to-publish-your-library" class="headerlink" title="step by step to publish your library"></a>step by step to publish your library</h3><ol><li>register your pypi account <a href="https://pypi.org/" target="_blank" rel="noopener">https://pypi.org/</a></li><li>tree example-pypi</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setup.py</span><br><span class="line">example-pypi</span><br><span class="line">    __init__.py</span><br></pre></td></tr></table></figure><p>setup.py example</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> setuptools <span class="keyword">import</span> setup</span><br><span class="line"></span><br><span class="line"><span class="comment">#your evil code can put here</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line">    name=<span class="string">'example-pypi'</span>,</span><br><span class="line">    version=<span class="string">'1.0.1'</span>,</span><br><span class="line">    author=<span class="string">'admin'</span>,</span><br><span class="line">    author_email=<span class="string">'admin@example.com'</span>,</span><br><span class="line">    url=<span class="string">'https://www.google.com'</span>,</span><br><span class="line">    description=<span class="string">'example-pypi'</span>,</span><br><span class="line">    packages=[<span class="string">'example-pypi'</span>],</span><br><span class="line">    install_requires=[<span class="string">'requests'</span>],</span><br><span class="line">    license=<span class="string">'MIT'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure><p>you can get the setup example from<br><a href="https://github.com/kennethreitz/setup.py" target="_blank" rel="noopener">https://github.com/kennethreitz/setup.py</a></p><p>evil demo code<br><a href="https://github.com/fate0/cookiecutter-evilpy-package/" target="_blank" rel="noopener">https://github.com/fate0/cookiecutter-evilpy-package/</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">python setup.py check</span><br><span class="line"></span><br><span class="line">python setup.py bdist_wheel --universal</span><br><span class="line"></span><br><span class="line">pip install twine</span><br><span class="line"></span><br><span class="line">twine upload -u your_pypi_username -p <span class="string">'your_pypi_password'</span> dist/*</span><br></pre></td></tr></table></figure><h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul><li><a href="https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610" target="_blank" rel="noopener">https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610</a></li><li><a href="https://hackerone.com/reports/946409" target="_blank" rel="noopener">https://hackerone.com/reports/946409</a></li><li><a href="https://my.oschina.net/u/4579562/blog/4750657" target="_blank" rel="noopener">https://my.oschina.net/u/4579562/blog/4750657</a></li><li><a href="http://blog.fatezero.org/2017/06/01/package-fishing/" target="_blank" rel="noopener">http://blog.fatezero.org/2017/06/01/package-fishing/</a></li><li></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;this is not just related to bug bounty, this attack can also be used in red team.&lt;/p&gt;
+&lt;h3 id=&quot;step-by-step-to-publish-your-library&quot;&gt;&lt;a hr
+      
+    
+    </summary>
+    
+    
+    
+      <category term="supply-chain-attack,poison,security,red team,package-fishing" scheme="https://k3mlol.github.io/tags/supply-chain-attack-poison-security-red-team-package-fishing/"/>
+    
+  </entry>
   
   <entry>
     <title>acl-bypass-magic</title>
