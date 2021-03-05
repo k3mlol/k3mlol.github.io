@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://k3mlol.github.io/"/>
-  <updated>2021-02-26T03:10:05.511Z</updated>
+  <updated>2021-03-05T07:59:43.191Z</updated>
   <id>https://k3mlol.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>npm-poison</title>
+    <link href="https://k3mlol.github.io/npm-poison/"/>
+    <id>https://k3mlol.github.io/npm-poison/</id>
+    <published>2021-03-05T07:29:17.000Z</published>
+    <updated>2021-03-05T07:59:43.191Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="how-to-publish-your-npm-package"><a href="#how-to-publish-your-npm-package" class="headerlink" title="how to publish your npm package"></a>how to publish your npm package</h3><ol><li><p>register <a href="https://www.npmjs.com/" target="_blank" rel="noopener">https://www.npmjs.com/</a></p></li><li><p>npm login</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#login</span></span><br><span class="line">npm login</span><br><span class="line"></span><br><span class="line"><span class="comment">#mkdir folder and init package</span></span><br><span class="line">mkdir evil-npm</span><br><span class="line"><span class="built_in">cd</span> evil-npm</span><br><span class="line"></span><br><span class="line">npm init</span><br><span class="line">npm publish</span><br></pre></td></tr></table></figure><p>example npm poc package<br><a href="https://github.com/neargle/npm_evil_package/blob/master/package.json" target="_blank" rel="noopener">https://github.com/neargle/npm_evil_package/blob/master/package.json</a></p><h4 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h4><ul><li><a href="https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610" target="_blank" rel="noopener">https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610</a></li><li><a href="https://zellwk.com/blog/publish-to-npm/" target="_blank" rel="noopener">https://zellwk.com/blog/publish-to-npm/</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;how-to-publish-your-npm-package&quot;&gt;&lt;a href=&quot;#how-to-publish-your-npm-package&quot; class=&quot;headerlink&quot; title=&quot;how to publish your npm packag
+      
+    
+    </summary>
+    
+    
+    
+      <category term="security, supply chain attack, npm, phishing" scheme="https://k3mlol.github.io/tags/security-supply-chain-attack-npm-phishing/"/>
+    
+  </entry>
   
   <entry>
     <title>pypi-library-poison</title>
