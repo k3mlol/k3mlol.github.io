@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://k3mlol.github.io/"/>
-  <updated>2021-03-05T07:59:43.191Z</updated>
+  <updated>2021-03-16T03:46:20.651Z</updated>
   <id>https://k3mlol.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>security-architecture-design</title>
+    <link href="https://k3mlol.github.io/security-architecture-design/"/>
+    <id>https://k3mlol.github.io/security-architecture-design/</id>
+    <published>2021-03-12T14:29:00.000Z</published>
+    <updated>2021-03-16T03:46:20.651Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>I have been work on a small party A company for almost 2 year, maybe I will leave this job soon.<br>I want to make a summary for my previous work. and talk about the architecture security design.<br>A good architecture can reduce the cyber security risk, make the security team fix the vulnerability more easily, help devops workmate have clear mind on architecture.</p><h4 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h4><ol><li><p>separate the (To client, To internal, To third party(maybe most is API))  network flow.</p></li><li><p>using k8s. at old IT infrastructure, once the attacker can compromise a victim server, attacker can hit the intranet. k8s, there will no SSH service.<br>the miscro service’s access can be more strict. especially once a server had been compromised, just repull the images again, the victim tool(webshell, mem shell)can be remove(in some case may be can’t, like mount the host volume).</p></li></ol><p>security team have the limited time and energy, no company would like to hire many cyber security engineers. so us focus on the key point.</p><ol start="3"><li>pentest the internal service, especially find a attack path can hit the core service, show the impact to your workmate ,even in the intranet is not safe, the risk is can’t be ingored(if a company have a big technique debet, it’s quite hard to fix the vulnerability in short time).<br>but remind the workmate that the put the service in the intranet is a temporary method. </li></ol><h4 id="monitor-and-protect"><a href="#monitor-and-protect" class="headerlink" title="monitor and protect"></a>monitor and protect</h4><ol><li>monitor the k8s management service.</li><li>We know that not all the services can move to k8s, so the k8s infrastructure server between other few services network connection will be easily ingored. if a server can stand run alone, let it go.</li></ol><h4 id="IT-Governance"><a href="#IT-Governance" class="headerlink" title="IT Governance"></a>IT Governance</h4><p>IT Governance is a world class problem, how to know a accurate amount of servers. how to know a accurate amount of miscro services. even a accurate amount of subdomain</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot; title=&quot;Preface&quot;&gt;&lt;/a&gt;Preface&lt;/h3&gt;&lt;p&gt;I have been work on a small party A company for al
+      
+    
+    </summary>
+    
+    
+    
+      <category term="security design,architecture,k8s" scheme="https://k3mlol.github.io/tags/security-design-architecture-k8s/"/>
+    
+  </entry>
   
   <entry>
     <title>npm-poison</title>
